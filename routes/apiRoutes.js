@@ -1,5 +1,4 @@
 var data = require("../db/db");
-var notes = require("/db/notes");
 const app = require("express").Router();
 
 
@@ -7,13 +6,13 @@ const app = require("express").Router();
 
 // GET route
 
-app.get("/api/notes", function (req, res) {
+app.get("/notes", function (req, res) {
 	return res.json(data)
 })
 
 
 // POST route
-app.post("/api/notes", function (req, res) {
+app.post("/notes", function (req, res) {
 	var newNote = req.body;
 	console.log(newNote);
 	notes.push(newNote);
@@ -28,7 +27,7 @@ app.post("/api/notes", function (req, res) {
 // 	res.send(data)
 // })
 
-app.delete("/api/notes/:id", (req, res, next) => {
+app.delete("/notes/:id", (req, res, next) => {
 	activeNote.deleteOne({ _id: req.params.id }).then(
 		() => {
 			res.status(200).json({
@@ -44,17 +43,17 @@ app.delete("/api/notes/:id", (req, res, next) => {
 	);
 });
 
-app.post("/api/clear", function (req, res) {
+app.post("/clear", function (req, res) {
 	notes.length = 0;
 
 	res.json({ ok: true });
 })
 
-module.exports = function (app) {
-	app.get("/api/notes"), function (req, res) {
-		res.json(notes);
-	}
-};
+// module.exports = function (app) {
+// 	app.get("/notes"), function (req, res) {
+// 		res.json(notes);
+// 	}
+// };
 
 
 module.exports = app;

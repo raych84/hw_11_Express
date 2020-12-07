@@ -1,32 +1,39 @@
-const fs = require("fs");
-// Class for notes
-class Notes {
-	constructor(title, text) {
-		this.title = title;
-		this.text = text;
-	}
-}
+// const fs = require("fs");
+// const util = require("util");
 
-// Defined functions that read, write and delete
- function readNote(req, res)  {
-	fs.readFile("/db.json", "utf8", (err, data) => {
-		if (err) {
-			console.error(err)
-			return
-		}
-		console.log(data)
-	})
+// const writeFileAsync = util.promisify(fs.writeFile);
+// const readFileAsync = util.promisify(fs.readFile);
+// // Class for notes
+// class Notes {
+// 	constructor(title, text) {
+// 		this.title = title;
+// 		this.text = text;
+// 	}
+// }
 
-}
-function writeNote() {
-	fs.writeFile("/db.json", Notes, err => {
-		if (err) {
-			console.error(err)
-			return
-		}
-	})
+// // Defined functions that read, write and delete
+//  function readNote(req, res)  {
+// 	fs.readFile("db/db.json", "utf8", (err, data) => {
+// 		if (err) {
+// 			console.error(err)
+// 			return
+// 		}
+// 		console.log(data)
+// 	})
+
+// }
+// function newNote(req, res) {
+// 	fs.writeFile("db/db.json", Notes, err => {
+// 		if (err) {
+// 			console.error(err)
+// 			return
+// 		}
+// 	})
 	
 	
-}
+// }
+// function deleteNote(id){
+	
+// }
 
-module.exports = Notes();
+// module.exports = Notes();

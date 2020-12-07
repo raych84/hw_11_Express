@@ -1,6 +1,5 @@
 // require express
 const express = require("express");
-const notes = require("./db/db");
 const apiRoutes = require("./routes/htmlRoutes");
 const htmlRoutes = require("./routes/htmlRoutes");
 
